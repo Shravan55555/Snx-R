@@ -1,7 +1,7 @@
 env:
     CIRRUS_CLONE_DEPTH: 1
-    rom_name: Nusantara
-    device: lavender
+    rom_name: PixelOS
+    device: RMX1901
     snx: $CIRRUS_WORKING_DIR/Snx-R/snx
 
 task:
