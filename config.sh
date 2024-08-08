@@ -1,5 +1,5 @@
 # add repo, dt, vt, kt etc.
-repo init -u https://github.com/Evolution-X/manifest -b udc --git-lfs
+repo init -u https://github.com/PixelOS-AOSP/manifest.git -b fourteen --git-lfs
 # replace with your manifest
 git clone https://github.com/Shravan55555/local_manifest.git -b main .repo/local_manifests
 # sync script
