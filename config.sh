@@ -16,7 +16,7 @@ make api-stubs-docs || echo no problem
 make system-api-stubs-docs || echo no problem
 make test-api-stubs-docs || echo no problem
 # vanilla build
-m evolution
+mka bacon
 export GAPPS_BUILD=false
 export RELEASE=true
 #Snx-R
