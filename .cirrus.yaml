@@ -1,0 +1,47 @@
+env:
+    CIRRUS_CLONE_DEPTH: 1
+    rom_name: Nusantara
+    device: lavender
+    snx: $CIRRUS_WORKING_DIR/Snx-R/snx
+
+task:
+  name: "Snx-R"
+  # skip: $CIRRUS_BRANCH == 'main'
+  timeout_in: 240m
+  container:
+      image: snaxpsycho/cirrus:latest
+      cpu: 8
+      memory: 32G
+      stateful: true
+      greedy: true
+      volumes:
+          - /home/cirrus:/home/cirrus
+          - /home/cirrus/ccache:/home/cirrus/ccache
+          - /home/cirrus/.config:/home/cirrus/.config
+          
+  
+  cloning_script:
+    - git clone git@github.com:Nusantara-SiXtY-N9/Snx-R.git
+    - echo "done ✅"
+    - df -h .
+
+  notify_script:
+    - bash $snx/notify.sh
+  
+  sync_script:
+    - bash $snx/sync.sh
+  
+  vanilla_build_script:
+    - bash $snx/build.sh
+  
+  # apps_up_script:
+    # - set -e
+    # - bash <(curl -s $script/upload_apps.sh)
+    
+  # gapps_build_script:
+    # - set -e
+    # - bash <(curl -s $script/gapps_build.sh)
+    
+  # gapps_up_script:
+    # - set -e
+    # - bash <(curl -s $script/sfg_uploader.sh)
