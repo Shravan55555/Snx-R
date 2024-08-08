@@ -9,7 +9,7 @@ export TZ=Asia/Dhaka
 # export USE_GAPPS=true
 # export WITH_GAPPS=true
 # export EXTRA_GAPPS=false
-lunch lineage_RMX1901-user
+lunch aosp_RMX1901-ap2a-user
 # export extra module
 # export SELINUX_IGNORE_NEVERALLOWS=true
 make api-stubs-docs || echo no problem
